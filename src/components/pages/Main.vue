@@ -1,15 +1,7 @@
 <template>
     <main class="main">
-        <div class="conteinr">
-            <div class="grid-layout mb-2">
-                <!-- <div 
-                v-for="p in projects_list" :key="p.id"
-                class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Title: {{ p.title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Id: {{ p.id }}</h6>
-                    </div>
-                </div> -->
+        <div class="container d-flex flex-column">
+            <div class="grid-layout">
 
                 <Card 
                 v-for="p in projects_list" :key="p.id"
@@ -20,7 +12,7 @@
 
             </div>
 
-            <div class="pagination d-flex flex-column">
+            <div class="pagination d-flex flex-column mt-auto">
 
                 <p class="current-page">
                     Current page: {{ current_page }}
@@ -79,7 +71,13 @@ export default {
 
 
 <style scoped>
+.main {
+    height: 800px;
+}
 
+.container{
+    height: 800px;
+}
 .grid-layout{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
