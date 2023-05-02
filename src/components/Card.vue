@@ -8,7 +8,7 @@
                 <h6 
                 v-if="project_category !== null"
                 class="card-subtitle mb-2 text-body-secondary">
-                    Project Category: <span class="btn btn-sm btn-primary">{{ project_category }}</span> 
+                    Project Category: <span class="badge bg-primary">{{ project_category }}</span> 
                 </h6>
                 <h6 
                 v-else
@@ -29,7 +29,7 @@
                     <li
                     v-for="item in technologies"
                     >
-                        <span class="btn btn-sm btn-warning">{{ item.technology }}</span>
+                        <span class="badge bg-warning">{{ item.technology }}</span>
                     </li>
                 </ul>
             </div>
@@ -55,7 +55,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 ul, ol, li, menu {
     list-style: none;
     padding: 0;
