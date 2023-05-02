@@ -2,14 +2,22 @@
     <main class="main">
         <div class="conteinr">
             <div class="grid-layout">
-                <div 
+                <!-- <div 
                 v-for="p in projects_list" :key="p.id"
                 class="card">
                     <div class="card-body">
                         <h5 class="card-title">Title: {{ p.title }}</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Id: {{ p.id }}</h6>
                     </div>
-                </div>
+                </div> -->
+
+                <Card 
+                v-for="p in projects_list" :key="p.id"
+                :title="p.title"
+                :project_category="p.proj_category"
+                :technologies="p.technologies"
+                />
+
             </div>
         </div>
     </main>
@@ -18,8 +26,12 @@
 
 <script>
 import axios from 'axios';
+import Card from '../Card.vue';
 
 export default {
+    components: {
+        Card,
+    },  
     data(){
         return {
             projects_list: [],
