@@ -6,14 +6,12 @@
         </div>
         <nav>
             <ul class="d-flex gap-2">
-                <li>
-                    links
-                </li>
-                <li>
-                    links
-                </li>
-                <li>
-                    links
+                <li
+                v-for="route in routeNames" :key="route"
+                >
+                    <router-link :to="{ name: route }">
+                        {{ route }}
+                    </router-link>
                 </li>
             </ul>
         </nav>
@@ -23,7 +21,11 @@
 
 <script>
     export default {
-        
+        data(){
+            return {
+                routeNames: ['home', 'portfolio', 'contacts']
+            }
+        }
     }
 </script>
 

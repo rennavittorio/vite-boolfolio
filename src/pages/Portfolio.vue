@@ -1,6 +1,6 @@
 <template>
     <div class="container p-5 bg-success">
-        this is about me...
+        this is my portfolio...
     </div>
 </template>
 <script>
