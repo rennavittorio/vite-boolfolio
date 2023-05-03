@@ -2,7 +2,9 @@
 
     <Default>
 
-        This is the content of my homepage
+        <h1 class="text-center">
+            welcome to my website
+        </h1>
 
     </Default>
 
