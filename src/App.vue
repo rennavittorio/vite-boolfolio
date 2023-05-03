@@ -1,14 +1,8 @@
 <template>
 
   <div class="container">
-    <header class="py-3 mb-3">
-      this is header...
-    </header>
 
-    <Main />
-
-
-
+    <router-view></router-view>
 
   </div>
 
@@ -16,7 +10,7 @@
 </template>
 
 <script>
-import Main from './components/pages/Main.vue';
+import Main from './pages/Main.vue';
 
 export default{
   components: {
@@ -33,7 +27,9 @@ export default{
 
 
 <style scoped>
+
 .container {
-  height: 800px;
+  height: 100vh;
 }
+
 </style>
