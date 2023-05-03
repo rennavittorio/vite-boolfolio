@@ -4,7 +4,7 @@
 
         <Header />
     
-        <main class="main px-2">
+        <main class="main py-3 px-2">
             <slot />
         </main>
     
