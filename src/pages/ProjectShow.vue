@@ -3,7 +3,7 @@
     <Default>
 
         <h1 class="text-center">
-            welcome to my website
+            my detailed card
         </h1>
 
     </Default>

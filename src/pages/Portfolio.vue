@@ -29,6 +29,7 @@
                 <Card 
                 v-for="p in projects_list" :key="p.id"
                 :title="p.title"
+                :project_slug="p.slug"
                 :project_category="p.proj_category"
                 :technologies="p.technologies"
                 />
