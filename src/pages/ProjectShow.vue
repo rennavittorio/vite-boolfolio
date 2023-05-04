@@ -23,10 +23,10 @@
                         Related tech
                     </h3>
 
-                    <div class="grid-layout">
+                    <div v-if="relatedProjects.length > 0" class="grid-layout">
     
                         <Card 
-                        v-for="related in project.technologies[0].projects" :key="related.id"
+                        v-for="related in relatedProjects[0].projects" :key="related.id"
                         :title="related.title"
                         :project_slug="related.slug"
                         :project_category="related.proj_category"
@@ -63,6 +63,7 @@ export default {
     data(){
         return {
             project: null,
+            relatedProjects: [],
             loading: true,
         }
     }, 
@@ -74,6 +75,7 @@ export default {
             axios.get(`http://127.0.0.1:8000/api/projects/${slug}`).then(res=>{
                 const { success, project } = res.data;
                 this.project = project;
+                this.relatedProjects = project.technologies;
                 console.log(this.project)
             }).finally(()=>{
                 this.loading = false
@@ -83,6 +85,10 @@ export default {
     },
     created(){
         this.fetchProject(this.slug);
+    },
+    beforeRouteUpdate(to, from){
+        const newSlug = to.params.slug
+        this.fetchProject(newSlug)
     }
     
 }
